@@ -23,23 +23,21 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   ```
 
   * [rhdf5 (version 2.22.0)](https://bioconductor.org/packages/release/bioc/html/rhdf5.html)
+  * [data.table (version 1.11.8)](https://cran.r-project.org/web/packages/data.table/index.html)
   
-  You need to have `rhdf5` to decode the ECG data from SaMi-Trop dataset. You can install `rhdf5` by running the following line in your R console:
+  You need to have `rhdf5` and `data.table` to decode and read the ECG data from SaMi-Trop dataset. You can install `rhdf5` and `data.table` by running the following line in your R console:
   
   ```R
+  # rhdf5
   ## try http:// if https:// URLs are not supported
   source("https://bioconductor.org/biocLite.R")
   biocLite("rhdf5")
-  ```
   
-  * [data.table (version 1.11.8)](https://cran.r-project.org/web/packages/data.table/index.html)
-  
-  You need to have `data.table` to read the basic data from SaMi-Trop dataset. You can install `data.table` by running the following line in your R console:  
-  ```R
+  # data.table
   packageurl <- "https://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.11.8.tar.gz"
   install.packages(packageurl, repos=NULL, type="source")
   ```
-  
+
   * [survival (version 3.2-7)](https://cran.r-project.org/web/packages/survival/index.html)
   
   You need to have `survival` with version 3.2-7 to get the c-index for validation. You can install specific version of `survival` by running the following line in your R console:  
