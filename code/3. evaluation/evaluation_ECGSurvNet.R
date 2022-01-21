@@ -12,6 +12,7 @@ load("data/processed_data/valid_data.RData")
 
 # Set
 
+my_ctx <- mx.cpu() # you may use mx.gpu() if gpu version of mxnet is installed.
 model_name <- "model/ECGSurvNet/ECGSurvNet"
 
 # Load ECGSurvNet
@@ -20,7 +21,7 @@ best_model <- mx.model.load(model_name, 0)
 
 # Predict ecg_risk
 
-valid_pred <- survival_risk_predict(model = best_model, data = valid_ecg, batch_size = 50, my_ctx = mx.gpu(4))
+valid_pred <- survival_risk_predict(model = best_model, data = valid_ecg, batch_size = 50, my_ctx = my_ctx)
 valid_label[["ecg_risk"]] <- valid_pred[["predict_out"]]
 
 # Build traditional Cox model for comparison.
