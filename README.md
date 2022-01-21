@@ -41,7 +41,7 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   * [pillar (version 1.4.4)](https://cran.r-project.org/web/packages/pillar/index.html)
   * [ggplot2 (version 3.3.3)](https://cran.r-project.org/web/packages/ggplot2/index.html)
   
-  You need to have `ggplot2` and its dependencies installed to plot loss during training processing, and you can install these packages by running the following line in your R console: 
+  You need to have `ggplot2` and its dependencies installed to plot the loss during training processing, and you can install these packages by running the following line in your R console: 
   
   ```R
   package_url <- "https://cran.r-project.org/src/contrib/Archive/pillar/pillar_1.4.4.tar.gz"
@@ -95,6 +95,8 @@ You can evaluate its success on validation set. The traditional Cox regression m
   message("C-index of Cox model using age, sex, and the output of ECGSurvNet as covariates: ", round(cox_age_sex_ecg[["concordance"]][6], digits = 4))
   >> C-index of Cox model using age, sex, and the output of ECGSurvNet as covariates: 0.6754
   ```
+
+The performance of pre-trained ECGSurvNet might change in other dataset because we only used about ~1,200 ECG records to train the ECGSurvNet in this repository.
 
 # How to cite
 
