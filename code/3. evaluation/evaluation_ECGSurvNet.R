@@ -13,10 +13,11 @@ load("data/processed_data/valid_data.RData")
 
 my_ctx <- mx.cpu() # you may use mx.gpu() if gpu version of mxnet is installed.
 model_name <- "model/ECGSurvNet/ECGSurvNet"
+epoch <- 0 # zero for pre-trained weights.
 
 # Load ECGSurvNet
 
-best_model <- mx.model.load(model_name, 0)
+best_model <- mx.model.load(model_name, epoch)
 
 # Predict ecg_risk
 

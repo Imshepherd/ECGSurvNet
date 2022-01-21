@@ -37,6 +37,18 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   packageurl <- "https://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.11.8.tar.gz"
   install.packages(packageurl, repos=NULL, type="source")
   ```
+  
+  * [pillar](https://cran.r-project.org/web/packages/pillar/index.html)
+  * [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html)
+  
+  You need to have `ggplot2` and its dependencies installed to plot loss during training processing, and you can install these packages by running the following line in your R console: 
+  
+  ```R
+  package_url <- "https://cran.r-project.org/src/contrib/Archive/pillar/pillar_1.4.4.tar.gz"
+  install.packages(package_url, repos = NULL, type="source")
+  package_url <- "https://cran.r-project.org/src/contrib/Archive/ggplot2/ggplot2_3.3.3.tar.gz"
+  install.packages(package_url,  repos = NULL, type = "source")  
+  ```
 
   * [survival (version 3.2-7)](https://cran.r-project.org/web/packages/survival/index.html)
   
@@ -46,7 +58,7 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   packageurl <- "https://cran.r-project.org/src/contrib/Archive/survival/survival_3.2-7.tar.gz"
   install.packages(packageurl, repos=NULL, type="source")
   ```  
-  
+
 # Data preparation
   
 We use the [SaMi-Trop dataset](https://zenodo.org/record/4905618#.YdzpJ8lBxPY) as the example data. The SaMi-Trop cohort is an open dataset with annotations of mortality and the correspondent ECG traces. In this repository, we randomly divided the dataset into training (80%) and validation (20%) sets.  
