@@ -40,6 +40,15 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   install.packages(packageurl, repos=NULL, type="source")
   ```
   
+  * [survival (version 3.2-7)](https://cran.r-project.org/web/packages/survival/index.html)
+  
+  You need to have `survival` with version 3.2-7 to get the c-index for validation. You can install speifici version of `survival` by running the following line in your R console:  
+  
+  ```R
+  packageurl <- "https://cran.r-project.org/src/contrib/Archive/survival/survival_3.2-7.tar.gz"
+  install.packages(packageurl, repos=NULL, type="source")
+  ```  
+  
 # Data preparation
   
 We use the [SaMi-Trop dataset](https://zenodo.org/record/4905618#.YdzpJ8lBxPY) as the example data. The SaMi-Trop cohort is an open dataset with annotations of mortality and the correspondent ECG traces. In this repository, we randomly divided the dataset into training (80%) and validation (20%) sets.  

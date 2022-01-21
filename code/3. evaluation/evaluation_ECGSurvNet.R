@@ -3,7 +3,6 @@
 
 library(survival)
 library(mxnet)
-library(abind)
 source('code/2. training process/1. iterator and predictor.R')
 
 # Load data
