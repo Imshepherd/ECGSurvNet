@@ -96,7 +96,7 @@ You can evaluate its success on validation set. The traditional Cox regression m
   >> C-index of Cox model using age, sex, and the output of ECGSurvNet as covariates: 0.6754
   ```
 
-The performance of pre-trained ECGSurvNet might fluctuated in other dataset because we only used about ~1,200 ECG records to train the ECGSurvNet in this repository.
+The performance of pre-trained ECGSurvNet might be fluctuating in other dataset because we only used about ~1,200 ECG records to train the ECGSurvNet in this repository.
 
 # How to cite
 
