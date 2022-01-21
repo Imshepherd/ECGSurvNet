@@ -35,7 +35,7 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   
 # Data preparation
   
-We use the [SaMi-Trop dataset](https://zenodo.org/record/4905618#.YdzpJ8lBxPY) as the example data. The SaMi-Trop cohort is an open dataset with annotations of mortality and the correspondent ECG traces. In this repository, we randomly divided the dataset into training (80) and validation (20%) sets.  
+We use the [SaMi-Trop dataset](https://zenodo.org/record/4905618#.YdzpJ8lBxPY) as the example data. The SaMi-Trop cohort is an open dataset with annotations of mortality and the correspondent ECG traces. In this repository, we randomly divided the dataset into training (80%) and validation (20%) sets.  
 You can use the code ['code/1. processing data/1. download Sami-Trop.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/1.%20processing%20data/1.%20download%20Sami-Trop.R) to download the SaMi-Trop dataset, and use the codes ['code/1. processing data/2. pre-processing data.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/1.%20processing%20data/2.%20pre-processing%20data.R) to pre-process the dataset for training and validating ECGSurvNet.
 
   
