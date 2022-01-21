@@ -27,10 +27,9 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   You need to have `rhdf5` to decode the ECG data from SaMi-Trop dataset. You can install `rhdf5` by running the following line in your R console:
   
   ```R
-  if (!requireNamespace("BiocManager", quietly = TRUE))
-      install.packages("BiocManager")
-  
-  BiocManager::install("rhdf5")  
+  ## try http:// if https:// URLs are not supported
+  source("https://bioconductor.org/biocLite.R")
+  biocLite("rhdf5")
   ```
   
   
