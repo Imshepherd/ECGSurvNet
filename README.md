@@ -1,6 +1,6 @@
 # ECGSurvNet
 
-ECGSurvNet is a deep survival neural network for predicting mortality risk from electrocardiogram (ECG). This repository demonstrates how to train and test ECGSurvNet on the open ECG dataset. ECGSurvNet predicts the patient’s risk of death from the waveform of ECG, which trained using the modified equations of Cox proportional hazards model as the loss function. Please refer to our paper for more details:<br>
+ECGSurvNet is a deep survival neural network for predicting mortality risk from electrocardiogram (ECG). This repository demonstrates how to train and test ECGSurvNet on the open ECG dataset. ECGSurvNet predicts the patient’s risk of death from the waveform of ECG, which uses the modified equations of Cox proportional hazards model as the loss function. Please refer to our paper for more details:<br>
   * C Lin, "Mortality risk prediction of electrocardiogram via deep survival neural network as an extensive long-term cardiovascular outcome predictor", submitted to journal in 2022.
   
   
@@ -31,7 +31,7 @@ You can use the code ['code/1. processing data/1. download Sami-Trop.R'](https:/
   
 # Deep learning model: ECGSurvNet
 
-The model can be trained using the script ['code/train.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/train.R) once the data is prepared by ['code/1. processing data/2. pre-processing data.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/1. processing data/2. pre-processing data.R). Alternatively, pre-trained weights of the ECGSurvNet is available at ['model/ECGSurvNet/ECGSurvNet-0000.params'](https://github.com/Imshepherd/ECGSurvNet/blob/main/model/model/ECGSurvNet/ECGSurvNet-0000.params).  
+The model can be trained using the script ['code/train.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/train.R) once the data is prepared by ['code/1. processing data/2. pre-processing data.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/1.%20processing%20data/2.%20pre-processing%20data.R). Alternatively, pre-trained weights of the ECGSurvNet is available at ['model/ECGSurvNet/ECGSurvNet-0000.params'](https://github.com/Imshepherd/ECGSurvNet/blob/main/model/model/ECGSurvNet/ECGSurvNet-0000.params).  
 
 A modified residual net (ResNet) with 1D convolutional layer is used in this repository, which is described in the script ['code/train.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/train.R): 
 
@@ -40,14 +40,14 @@ A modified residual net (ResNet) with 1D convolutional layer is used in this rep
                              num_filters = c(32, 64, 64, 128), num_unit = c(3, 3, 6, 4), end_filters = c(512))
   ```
   
-  * input: dimension = (2800, 1, 12, N). The input tensor contains the 2,800 sequence signals from each ECG leads. In the SaMi-Trop dataset, ECG was sampled at 400 Hz but some data was recorded with a duration of 10 seconds and others of 7 seconds. The ECG was fill with zeros on both size in order to make data have same size with a length of 4,096 points. For detail of ECG data, please ref to [SaMi-Trop dataset](https://zenodo.org/record/4905618#.YdzpJ8lBxPY). We crop a length of 2,800 of ECG from the middle of original ECG for model training and validation. The last tensor consisted the sequence signals from 12 different ECG leads.
+  * input: dimension = (2800, 1, 12, N). The input tensor contains the 2,800 sequence signals from each ECG leads. In the SaMi-Trop dataset, ECG was sampled at 400 Hz but some data was recorded with a duration of 10 seconds and others of 7 seconds. The ECG was fill with zeros on both size in order to make data have same size with a length of 4,096 points. For detail of ECG data, please ref to [SaMi-Trop dataset](https://zenodo.org/record/4905618#.YdzpJ8lBxPY). We crop a length of 2,800 points from the middle of original ECG for model training and validation. The final tensor consisted the sequence signals from 12 different ECG leads.
   
   * output: shape = (N). The predicted mortality risk from the ECG.
 
 
 # Performance
 
-You can evaluate its success on validation set. The traditional Cox regression model was used as the comparison, which was fitted using covariate data, including age and sex. An example script of validation can be found in ['code/3.  evaluation/evaluation_ECGSurvNet.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/3.  evaluation/evaluation_ECGSurvNet.R), and the performance is summarized as following:
+You can evaluate its success on validation set. The traditional Cox regression model was used as the baseline comparison, which was fitted using covariate data including age and sex. An example script of validation can be found in ['code/3.  evaluation/evaluation_ECGSurvNet.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/3.%20evaluation/evaluation_ECGSurvNet.R), and the performance is summarized as following:
 
   ```R
   message("C-index of Cox model using age and sex as covariates: ", round(cox_age_sex[["concordance"]][6], digits = 4))
