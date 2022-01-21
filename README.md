@@ -38,8 +38,8 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   install.packages(packageurl, repos=NULL, type="source")
   ```
   
-  * [pillar](https://cran.r-project.org/web/packages/pillar/index.html)
-  * [ggplot2](https://cran.r-project.org/web/packages/ggplot2/index.html)
+  * [pillar (version 1.4.4)](https://cran.r-project.org/web/packages/pillar/index.html)
+  * [ggplot2 (version 3.3.3)](https://cran.r-project.org/web/packages/ggplot2/index.html)
   
   You need to have `ggplot2` and its dependencies installed to plot loss during training processing, and you can install these packages by running the following line in your R console: 
   
