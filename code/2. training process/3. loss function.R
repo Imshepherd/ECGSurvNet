@@ -29,11 +29,3 @@ cox_loss <- function (indata, inlabel, inmask, eps = 1e-8, make_loss = TRUE) {
   
 }
 
-# Test function
-
-test_loss <- function(){
-  
-  symbol <- cox_loss(indata = mx.symbol.Variable(name = "data"), 
-                     inlabel = mx.symbol.Variable(name = "label"), 
-                     inmask = mx.symbol.Variable(name = "mask"))
-}

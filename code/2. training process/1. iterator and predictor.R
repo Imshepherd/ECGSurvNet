@@ -162,20 +162,3 @@ survival_risk_predict <- function(model, data, batch_size, my_ctx) {
 }
 
 
-# Test function
-
-test_iterator <- function(){
-  
-  load("data/processed_data/train_data.RData")
-  
-  my_ctx <- mx.gpu(4)
-  train_iter <- deepcox_iterator_func(iter = NULL, train_data = train_ecg, train_label = train_label,
-                                      my_ctx = my_ctx, batch_size = 32)
-  train_iter$reset()
-  train_iter$iter.next()
-  test2 <- train_iter$value()
-  print(dim(test2$data))
-  print(dim(test2$at_risk))
-  print(dim(test2$event))
-}
-

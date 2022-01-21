@@ -81,10 +81,6 @@ residual_block <- function(indata, kernel_size = c(3, 1), relu_slope = 0.2, stri
                              num_filters = num_filters * inverted_coef, no_pad = FALSE, relu_slope = relu_slope,
                              bn = bn, no_act = end_no_act, stage = paste0(stage, "_restore"))
   
-  message("residual_reduce block out dim: ", mx.symbol.infer.shape(conv_reduce, data = c(2800, 12, 1, 7))$out.shapes)
-  message("residual_standard block out dim: ", mx.symbol.infer.shape(conv_standard, data = c(2800, 12, 1, 7))$out.shapes)
-  message("residual_restore block out dim: ", mx.symbol.infer.shape(conv_restore, data = c(2800, 12, 1, 7))$out.shapes)
-  
   return(conv_restore)
 }
 
@@ -145,9 +141,6 @@ res_block <- function(indata, end_pooling, bn,
       # To next block
       res_in <- res_relu
       
-      message("residual block in dim: ", mx.symbol.infer.shape(res_in, data = c(2800, 12, 1, 7))$out.shapes)
-      message("residual block out dim: ", mx.symbol.infer.shape(res_block_out, data = c(2800, 12, 1, 7))$out.shapes)
-      message("residual block branch dim: ", mx.symbol.infer.shape(res_branch, data = c(2800, 12, 1, 7))$out.shapes)
     }
   }
 
@@ -213,17 +206,4 @@ declare_variable <- function(var_names = c("data", "label", "mask")){
 }
 
 
-
-# Test function
-
-test_model <- function(){
-  
-  var_list <- declare_variable(var_names = c("data", "label", "mask"))
-  
-  symbol <- ECGSurvNet(indata = var_list[["data"]], 
-                       end_pooling = TRUE, bn = TRUE, start_filter = 32, inverted_coef = 4,
-                       num_filters = c(32, 64, 64, 128), num_unit = c(3, 3, 6, 3), end_filters = c(128, 128))
-
-  
-}
 

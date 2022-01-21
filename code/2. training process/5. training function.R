@@ -131,15 +131,5 @@ get_data_dim <- function (iterator){
   return(input_dim)
 }
 
-test_model_feed_forward <- function(){
-  
-  optimizer = my_optimizer; logger = logger;
-  pred_symbol = loss_symbol;
-  arg_params = arg_params; aux_params = aux_params; fixed_params = NULL;
-  model_name = model_name; verbose_FREQ = verbose_FREQ;
-  my_ctx = my_ctx; early_stop_epoch = early_stop_epoch;
-  start_epoch = current_round; end_epoch = end_epoch; stage = k;
-  evalu_type = "c_index"; tune_data = tune_ecg; tune_label = tune_label;
-}
 
 
