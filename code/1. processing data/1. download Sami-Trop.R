@@ -13,9 +13,9 @@ ecg_data_file_dir <- "data/raw_data/"
 
 # Download and zip
 
-download.file(url = basic_infor_url, destfile = basic_infor_file_path, method = "wget", quiet = TRUE)
+download.file(url = basic_infor_url, destfile = basic_infor_file_path)
 
-download.file(url = ecg_data_url, destfile = ecg_data_zip_path, method = "wget", quiet = TRUE)
+download.file(url = ecg_data_url, destfile = ecg_data_zip_path)
 unzip(zipfile = ecg_data_zip_path, exdir = ecg_data_file_dir)
 file.rename(from = paste0(ecg_data_file_dir, "exams.hdf5"), to = paste0(ecg_data_file_dir, "Sami-Trop.hdf5"))
 
