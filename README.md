@@ -83,7 +83,7 @@ A modified residual net (ResNet) with 1D convolutional layer is used in this rep
 
 # Performance
 
-You can evaluate its success on validation set. The traditional Cox regression model was used as the baseline comparison, which was fitted using covariate data including age and sex. An example script of validation can be found in ['code/3.  evaluation/evaluation_ECGSurvNet.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/3.%20evaluation/evaluation_ECGSurvNet.R), and the performance is summarized as following:
+You can evaluate its success on validation set. The traditional Cox regression model was used as the baseline comparison, which was fitted using covariate data including age and sex. An example script of validation can be found in ['code/3.  evaluation/evaluation_ECGSurvNet.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/3.%20evaluation/evaluation_ECGSurvNet.R), and the performance of pre-trained ECGSurvNet is summarized as following:
 
   ```R
   message("C-index of Cox model using age and sex as covariates: ", round(cox_age_sex[["concordance"]][6], digits = 4))
@@ -96,7 +96,7 @@ You can evaluate its success on validation set. The traditional Cox regression m
   >> C-index of Cox model using age, sex, and the output of ECGSurvNet as covariates: 0.6754
   ```
 
-The performance of pre-trained ECGSurvNet might change in other dataset because we only used about ~1,200 ECG records to train the ECGSurvNet in this repository.
+The performance of pre-trained ECGSurvNet might fluctuated in other dataset because we only used about ~1,200 ECG records to train the ECGSurvNet in this repository.
 
 # How to cite
 
