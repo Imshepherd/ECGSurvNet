@@ -31,7 +31,7 @@ You can use the code ['code/1. processing data/1. download Sami-Trop.R'](https:/
   
 # Deep learning model: ECGSurvNet
 
-The model can be trained using the script ['code/train.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/train.R) once the data is prepared by ['code/1. processing data/2. pre-processing data.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/1.%20processing%20data/2.%20pre-processing%20data.R). Alternatively, pre-trained weights of the ECGSurvNet is available at ['model/ECGSurvNet/ECGSurvNet-0000.params'](https://github.com/Imshepherd/ECGSurvNet/blob/main/model/model/ECGSurvNet/ECGSurvNet-0000.params).  
+The model can be trained using the script ['code/train.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/train.R) once the data is prepared by ['code/1. processing data/2. pre-processing data.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/1.%20processing%20data/2.%20pre-processing%20data.R). Alternatively, pre-trained weights of the ECGSurvNet is available at ['model/ECGSurvNet/ECGSurvNet-0000.params'](https://github.com/Imshepherd/ECGSurvNet/blob/main/model/ECGSurvNet/ECGSurvNet-0000.params).  
 
 A modified residual net (ResNet) with 1D convolutional layer is used in this repository, which is described in the script ['code/train.R'](https://github.com/Imshepherd/ECGSurvNet/blob/main/code/train.R): 
 
