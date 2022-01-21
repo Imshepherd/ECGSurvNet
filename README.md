@@ -42,7 +42,7 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   
   * [survival (version 3.2-7)](https://cran.r-project.org/web/packages/survival/index.html)
   
-  You need to have `survival` with version 3.2-7 to get the c-index for validation. You can install speifici version of `survival` by running the following line in your R console:  
+  You need to have `survival` with version 3.2-7 to get the c-index for validation. You can install specific version of `survival` by running the following line in your R console:  
   
   ```R
   packageurl <- "https://cran.r-project.org/src/contrib/Archive/survival/survival_3.2-7.tar.gz"
