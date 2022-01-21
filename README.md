@@ -31,6 +31,9 @@ ECGSurvNet is a deep survival neural network for predicting mortality risk from 
   source("https://bioconductor.org/biocLite.R")
   biocLite("rhdf5")
   ```
+  
+  * [data.table (version 1.11.8)](https://cran.r-project.org/web/packages/data.table/index.html)
+  
   You need to have `data.table` to read the ECG data from SaMi-Trop dataset. You can install `data.table` by running the following line in your R console:  
   ```R
   install.packages("data.table", version = "1.11.8")
